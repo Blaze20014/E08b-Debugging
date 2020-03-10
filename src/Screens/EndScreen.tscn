@@ -21,17 +21,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 3 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Title" parent="." instance=ExtResource( 4 )]
 text = "Congratulations you finished the game!"
 
 [node name="Result" type="Label" parent="."]
 anchor_right = 1.0
-margin_top = 230.0
-margin_bottom = 400.0
-text = "Your final score is: %s and you died %s times!"
+margin_left = 3.68323
+margin_top = 225.089
+margin_right = 3.68323
+margin_bottom = 395.089
+text = "Your final score is: %s ...
+ and you died %s times!"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Menu" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -42,6 +51,9 @@ margin_left = -180.0
 margin_top = -75.0
 margin_right = 180.0
 margin_bottom = 79.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PlayButton" parent="Menu" instance=ExtResource( 5 )]
 margin_right = 360.0

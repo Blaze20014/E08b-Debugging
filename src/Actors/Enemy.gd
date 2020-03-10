@@ -4,6 +4,7 @@ extends Actor
 onready var stomp_area: Area2D = $StompArea2D
 
 export var score: = 100
+var is_positive = true
 
 
 func _ready() -> void:
@@ -13,8 +14,15 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	_velocity.x *= -1 if is_on_wall() else 1
-	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
-	_velocity.y = -speed.x
+	_velocity.x = move_and_slide(_velocity, FLOOR_NORMAL).x
+	if _velocity.x == 0:
+		if is_positive == true:
+			_velocity.x = -speed.x
+			is_positive = false
+		else:
+			_velocity.x = speed.x
+			is_positive = true
+		
 
 
 func _on_StompArea2D_area_entered(area: Area2D) -> void:

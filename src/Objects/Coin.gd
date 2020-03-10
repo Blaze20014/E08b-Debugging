@@ -11,5 +11,6 @@ func _on_body_entered(body: PhysicsBody2D) -> void:
 
 
 func picked() -> void:
-	PlayerData.score += score
+	PlayerData.set_score(PlayerData.score + 1)
 	anim_player.play("picked")
+	
